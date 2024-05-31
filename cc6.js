@@ -34,5 +34,21 @@ class Ball {
     }
 }
 
+// Initialize canvas and ball
+const canvas = document.getElementById('ballCanvas');
+const ctx = canvas.getContext('2d');
+
+const ball = new Ball(200, 160, 20, 2, 2, 'red');
+
+// Animation function
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ball.draw(ctx);
+    ball.update(canvas);
+}
+
+setInterval(animate, 10);
+
+
 
 
