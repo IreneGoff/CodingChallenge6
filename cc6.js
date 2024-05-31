@@ -18,4 +18,21 @@ class Ball {
         ctx.closePath();
     }
 
-    
+    update(canvas) {
+        // Check for collision with canvas edges
+        if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
+            this.dx = -this.dx;
+        }
+
+        if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
+            this.dy = -this.dy;
+        }
+
+        // Update ball position
+        this.x += this.dx;
+        this.y += this.dy;
+    }
+}
+
+
+
